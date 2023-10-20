@@ -1,15 +1,27 @@
-<p>
-	Tooltips can contain any arbitrary HTML, Angular bindings and even directives! Simply enclose desired content in a
-	Tooltips can contain any arbitrary HTML, Angular bindings and even directives! Simply enclose desired content in a
-	Tooltips can contain any arbitrary HTML, Angular bindings and even directives! Simply enclose desired content in a
-	Tooltips can contain any arbitrary HTML, Angular bindings and even directives! Simply enclose desired content in a
-	Tooltips can contain any arbitrary HTML, Angular bindings and even directives! Simply enclose desired content in a
-</p>
+<h1>TESTS TOOLTIP</h1>
 
-<ng-template #tipContent>Hello</ng-template>
+<ng-template #tooltipKO>Ma tooltip KO</ng-template>
+<ng-template #tooltipOK>Ma tooltip OK</ng-template>
 
-
-<span [ngbTooltip]="tipContent" placement="right">SPAN 1</span>
 <br>
 <br>
-<span autoClose="false" [ngbTooltip]="tipContent" placement="right">SPAN 2</span>
+<br>
+
+<span style="background-color: red;" [ngbTooltip]="tooltipKO">
+  Click/Hover (KO)
+</span>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<span style="background-color: green;" [ngbTooltip]="tooltipOK" triggers="manual" #t="ngbTooltip" (click)="t.open()"
+  (mouseover)="t.open()" (mouseout)="t.close()">
+  Click/Hover (OK)
+</span>
